@@ -10,12 +10,12 @@ const middleware = require("./middleware");
 //routes
 const router = express();
 const server = http.createServer(router);
-
+const { router:userRouter} = require("./routes/users/userRoutes");
 //this function will allow us to apply any middleware we need every time our router is ran. 
 applyMiddleware(middleware, router);
 
 //routes
-router.use(`/users`, userRouter)
+router.use(`/api/users`, userRouter)
 
 mongoose.connect(URL, {useNewUrlParser:true}).then(function listen(){
   server.listen(PORT, ()=>{
