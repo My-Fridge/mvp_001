@@ -33,6 +33,14 @@ const userSchema = new Schema({
     type:String,
     required:true,
     enum:["Toronto"]
+  },
+  grocery_list:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'GroceryList'
+  },
+  user_produce:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'UserProduce'
   }
 
 })

@@ -1,14 +1,16 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const userProduce = new Schema({
+const userProduceSchema = new Schema({
   user_id:{
-    type:String,
-    require:true,
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'User',
   },
-  produce_id:{
-    type:String,
-    required:true,
+  produce:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:'Produce',
+      required:true,
+ 
   },
   expiry_notification:{
     type:Date,
@@ -25,3 +27,5 @@ const userProduce = new Schema({
     
   }
 })
+
+exports.model = mongoose.model('UserProduce', userProduceSchema);

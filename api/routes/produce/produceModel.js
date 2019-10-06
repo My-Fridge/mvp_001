@@ -16,7 +16,26 @@ const produceSchema = new Schema({
     type:Date,
     require:true,
 
+  },
+  how_to_choose: {
+    type:String,
+    require:true,
+  },
+  ready_life: {
+    type:Date,
+    require:true,
+  },
+  current_state: {
+    type:String,
+    require:true,
+  },
+  recipes: {
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Recipe',
   }
+
+
+  
 
 
 })

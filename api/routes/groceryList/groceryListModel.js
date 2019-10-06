@@ -5,11 +5,19 @@ const groceryListSchema = new Schema({
   item :{
     type:Array,
     require: true,
+    produce_id:{
+      type:mongoose.Schema.Types.objectId,
+      ref:'Produce',
+    }
 
   },
   name: {
     type: String,
     require: true,
+  },
+  user_id:{
+    type:mongoose.Schema.Types.objectId,
+    ref:'User'
   }
 })
 
