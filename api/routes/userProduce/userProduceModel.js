@@ -6,12 +6,12 @@ const userProduceSchema = new Schema({
     type:mongoose.Schema.Types.ObjectId,
     ref:'User',
   },
-  produce:{
+  produce:[{
       type:mongoose.Schema.Types.ObjectId,
       ref:'Produce',
       required:true,
  
-  },
+  }],
   expiry_notification:{
     type:Date,
     required:true,

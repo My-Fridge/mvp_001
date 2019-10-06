@@ -2,15 +2,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const groceryListSchema = new Schema({
-  item :{
-    type:Array,
-    require: true,
-    produce_id:{
+  item :[{
+
       type:mongoose.Schema.Types.objectId,
       ref:'Produce',
-    }
-
-  },
+  }],
   name: {
     type: String,
     require: true,

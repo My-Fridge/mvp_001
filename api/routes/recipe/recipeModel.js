@@ -6,19 +6,19 @@ const recipeSchema = new Schema({
     type:String,
     require:true,
   },
-  contains:{
-    type:Array,
-    produce_id:{
+  contains:[
+    {
       type:mongoose.Schema.Types.ObjectId,
       ref:'Produce',
     }
-  },
+  ],
+
   description:{
     type:String,
     require:true,
   },
   rating: {
-    type:Int,
+    type:Number,
     require:false,
   }
 })

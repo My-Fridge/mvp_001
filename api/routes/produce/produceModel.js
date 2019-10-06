@@ -29,10 +29,10 @@ const produceSchema = new Schema({
     type:String,
     require:true,
   },
-  recipes: {
+  recipes: [{
     type:mongoose.Schema.Types.ObjectId,
     ref:'Recipe',
-  }
+  }]
 
 
   
